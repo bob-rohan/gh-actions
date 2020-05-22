@@ -1,1 +1,1 @@
-![.github/workflows/main.yml](https://github.com/bob-rohan/gh-actions/workflows/.github/workflows/main.yml/badge.svg)
+![.github/workflows/main.yml](https://github.com/bob-rohan/gh-actions/workflows/.github/workflows/main.yml/badge.svg) 
