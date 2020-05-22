@@ -1,0 +1,22 @@
+name: Push to Master
+
+on:
+  push:
+    branches:
+      - master
+      
+jobs:
+  push_to_master:
+    - name: Login
+      uses: atlassian/gajira-login@master
+      env:
+        JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
+        JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
+        JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
+    - name: Jira TODO
+      uses: atlassian/gajira-create@master
+      with:
+        project: BOB 
+        issuetype: Task
+        summary: {{ event.issue.title }}
+        description: {{ event.issue.body }}\\n\\n_Created from GitHub Action_
