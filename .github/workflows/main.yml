@@ -6,7 +6,9 @@ on:
       - master
       
 jobs:
-  push_to_master:
+  build:
+    runs-on: ubuntu-latest
+    name: Jira Example
     steps:
     - name: Login
       uses: atlassian/gajira-login@master
@@ -14,7 +16,8 @@ jobs:
         JIRA_BASE_URL: ${{ secrets.JIRA_BASE_URL }}
         JIRA_USER_EMAIL: ${{ secrets.JIRA_USER_EMAIL }}
         JIRA_API_TOKEN: ${{ secrets.JIRA_API_TOKEN }}
-    - name: Jira TODO
+
+    - name: Jira create
       uses: atlassian/gajira-create@master
       with:
         project: BOB 
