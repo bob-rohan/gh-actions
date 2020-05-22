@@ -8,4 +8,4 @@ on:
 jobs:
   push_to_master:
     - name: Login
-      uses
+      uses: atlassian/gajira-login@master
