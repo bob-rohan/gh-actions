@@ -18,3 +18,5 @@ jobs:
       with:
         project: BOB 
         issuetype: Task
+        summary: "test"
+        description: {{ event.issue.body }}\\n\\n_Created from GitHub Action_
